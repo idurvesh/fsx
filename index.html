@@ -1,33 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head>
-<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>salespage</title>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notification Prompt Dialog Example</title>
 
-</head><body>
-<div style="text-align: center; color: rgb(153, 0, 0);">
-<h1><big>&#8220;Own The Software That Gives Marketers An Easy Way
-To Build Niche Affiliate Sites In A Flash!&#8221;</big></h1>
-<div style="text-align: left;">
-<h2 style="text-align: center; color: rgb(0, 0, 153);">You
-can Make Money with this in ALL or ANY of these ways&#8230;</h2>
-<div style="text-align: center; font-weight: bold; font-style: italic; color: rgb(51, 0, 51);"><big>Sell
-the software to others! Give the Software Away But Make them do a CPA
-Offer<br>
-</big></div>
-</div>
-<div style="text-align: center; font-weight: bold; font-style: italic;"><big style="color: rgb(51, 0, 51);">&nbsp;to Activate it!
-Sell packs of pre-made niche sites! Build Niche Sites for Clients!<br>
-Build Niche Sites for Yourself with your affiliate IDs!&nbsp; <br>
-<br>
-</big></div>
-</div>Fellow Marketer,<br><br>I&#8217;m going to keep this brief because this
-is honestly a no-brainer.&nbsp; In fact if you can&#8217;t figure a way to
-make money using this software then you should probably go find a nice
-comfortable desk job and stop wasting your time trying to do business
-online.<br><br>&#8220;Niche Site Maker&#8221; is a fill-in-the-blanks &#8216;wizard&#8217;
-where you give it a few details about the niche you want a site built
-for, drop in some PLR articles on the subject, pick a header graphic
-and at the press of a button it spits out a ready to upload niche site
-packed with your affiliate ID&#8217;s.<br><br>Niche Site Maker works with Amazon, Clickbank, AddThis and Google Adsense.<br><br><h2 style="text-align: center;">But This Is No Ordinary Software Solution...</h2><br>Of
-course I couldn't just call it a day having created this amazing piece
-of software! I needed to make this a solution that my customers can
-offer to their customers...<br><br><div style="margin-left: 40px;"><span style="font-style: italic;">Drive Traffic To Your Site - Place your links in the about menu to Drive Traffic To Your Site.</span><br style="font-style: italic;"><span style="font-style: italic;">Complete Solution For Micro Niche Site Building - The Program Will Crank Out As Many Mini-Niche Sites as Your Customer Needs.</span><br style="font-style: italic;"><span style="font-style: italic;">Free Updates For Life &#8211; Whenever a new improved version of this software comes along, you will get the update free.&nbsp;</span></div></body></html>
+    <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Empty
+    }
+
+    // process the promptation dialog result
+    function onPrompt(results) {
+        alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+    }
+
+    // Show a custom prompt dialog
+    //
+    function showPrompt() {
+        navigator.notification.prompt(
+            'Please enter your name',  // message
+            onPrompt,                  // callback to invoke
+            'Registration',            // title
+            ['Ok','Exit'],             // buttonLabels
+            'Jane Doe'                 // defaultText
+        );
+    }
+
+    </script>
+  </head>
+  <body>
+    <p><a href="#" onclick="showPrompt(); return false;">Show Prompt</a></p>
+  </body>
+</html>
