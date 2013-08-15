@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Notification Prompt Dialog Example</title>
+    <title>Notification Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -16,26 +16,25 @@
         // Empty
     }
 
-    // process the promptation dialog result
-    function onPrompt(results) {
-        alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
-    }
+    // alert dialog dismissed
+        function alertDismissed() {
+            // do something
+        }
 
-    // Show a custom prompt dialog
+    // Show a custom alertDismissed
     //
-    function showPrompt() {
-        navigator.notification.prompt(
-            'Please enter your name',  // message
-            onPrompt,                  // callback to invoke
-            'Registration',            // title
-            ['Ok','Exit'],             // buttonLabels
-            'Jane Doe'                 // defaultText
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
         );
     }
 
     </script>
   </head>
   <body>
-    <p><a href="#" onclick="showPrompt(); return false;">Show Prompt</a></p>
+    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
   </body>
 </html>
